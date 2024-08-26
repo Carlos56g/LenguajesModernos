@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Personal</title>
+    <meta name="description" content="Agenda para almacenar eventos, desarrollada con Python & Flask & SQL.">
+    <meta name="keywords" content="Agenda, Flask, SQL, Python">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Agenda Personal</h1>
+
+    </header>
+
+    <main>
+        <div class="home">
+            <form action="/submit" method="post">
+                <div id="AddEvent" class="addEvent">
+                    <h2>Agregar Nuevo Evento:</h2>
+                    <h3>Titulo:</h3> <input type="text" required minlength="1" maxlength="50" class="titleInput"
+                        id="eventTitle" name="eventTitle">
+                    <h3>Descripcion:</h3> <input type="text " required minlength="1" maxlength="200"
+                        class="descriptionInput" id="eventDescription" name="eventDescription">
+                    <h3>Fecha:</h3> <input type="date" min="2018-01-01"
+                        max="2099-01-01" id="eventDate" name="eventDate" required/>
+                    <h3>Hora:</h3> <input type="time" id="eventHour" name="eventHour" id="eventHour" />
+                    <br><br>
+                    <input type="submit" value="Agregar Evento" class="submitButton">
+                </div>
+            </form>
+            <section id="EventSummary" class="eventSummary">
+                <h2>Eventos Actuales:</h2>
+
+                {% for event in events %}
+                <div class="event">
+                    <tr>
+                        <div class="Titulo"><td><h1>{{ event[2] }}</h1></td></div>
+                        <div class="Fecha"><td>{{ event[1] }}</td></div>
+                        <div class="Descripcion"><td>{{ event[3] }}</td></div>
+                    </tr>
+                </div>
+
+                {% endfor %}
+
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Carlos Garcia. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

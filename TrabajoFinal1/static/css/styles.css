@@ -1,0 +1,72 @@
+
+.addEvent{
+    width: 50vw;
+    height: 90vh;
+    display: inline-block;
+
+}
+
+.eventSummary{
+    display: flex;
+    width: 50vw;
+    height: 90vh;
+    display: inline-block;
+
+}
+
+.titleInput {
+    width: 80%;               
+    padding: 8px;             
+    border-radius: 4px;        
+    font-size: 20px;          
+}
+
+.descriptionInput{
+    width: 80%;
+    height: 20%;          
+    padding: 8px;             
+    border-radius: 4px;        
+    font-size: 18px;         
+}
+
+.home{
+    display: flex;
+    justify-content: space-between;
+}
+
+.submitButton{
+    display: block;
+    justify-content: center;
+
+}
+
+.event{
+    margin-top: 1%;
+    background-color: rgb(226, 226, 226);
+    width: 90%;
+    height: 15%;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+
+.Fecha{
+    float: right;
+    margin-right: 10px;
+}
+
+.Descripcion{
+    margin: 10px;
+
+}
+
+.Titulo{
+    left: 0;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.Titulo h1{
+    font-size:large;
+    margin: 0;
+}
