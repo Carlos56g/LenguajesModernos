@@ -27,3 +27,38 @@ def postEvent(eventDatetime,eventTitle,eventDescription):
         print(result)
 
     return 0
+
+def deleteEvent(eventID):
+    with engine.connect() as connection:
+        # Use a parameterized query
+        query = text("DELETE FROM Event_tb WHERE EventID=:Event_ID")
+
+        parameters = {
+            'Event_ID': eventID
+            }
+        
+        # Execute the query with the provided parameters
+        result=connection.execute(query,parameters)
+        connection.commit()
+        print(result)
+
+    return 0
+
+def putEvent(eventDatetime,eventTitle,eventDescription,eventID):
+    with engine.connect() as connection:
+        # Use a parameterized query
+        query = text("Update Event_tb SET EventDate=:event_datetime, EventTitle=:event_title, EventDescription=:event_description WHERE EventID=:event_ID")
+
+        parameters = {
+            'event_datetime': eventDatetime,
+            'event_title': eventTitle,
+            'event_description': eventDescription,
+            'event_ID': eventID
+            }
+        
+        # Execute the query with the provided parameters
+        result=connection.execute(query,parameters)
+        connection.commit()
+        print(result)
+
+    return 0
